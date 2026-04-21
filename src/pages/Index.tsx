@@ -307,8 +307,8 @@ const Index = () => {
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 60% 40%, rgba(43,95,199,0.4) 0%, transparent 65%), radial-gradient(ellipse at 20% 80%, rgba(0,180,216,0.2) 0%, transparent 55%)" }} />
         <div className="dot-pattern" style={{ position: "absolute", inset: 0 }} />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "80px 24px 0", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 40 }}>
-          <div style={{ flex: "1 1 100%", minWidth: 300 }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "80px 24px 0", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 48 }}>
+          <div style={{ flex: "1 1 55%", minWidth: 300 }}>
             <div className="animate" style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", color: "#00B4D8", marginBottom: 16, fontFamily: "'Cairo',sans-serif" }}>
               01 · المنصة الوطنية للشركات الناشئة
             </div>
@@ -375,51 +375,68 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Logo posted in top-left of hero */}
-          <div
-            className="logo-float"
-            style={{
-              position: "absolute",
-              top: 96,
-              left: 32,
-              zIndex: 2,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 180,
-              height: 180,
-            }}
-          >
-            {/* Outer glow ring */}
-            <div style={{
-              position: "absolute", inset: 0, borderRadius: "50%",
-              background: "radial-gradient(circle at center, rgba(0,180,216,0.25) 0%, rgba(43,95,199,0.12) 45%, rgba(255,255,255,0) 72%)",
-              filter: "blur(2px)",
-            }} />
-            {/* White card disc */}
-            <div style={{
-              position: "absolute", inset: 14, borderRadius: "50%",
-              background: "linear-gradient(160deg, #ffffff 0%, #f4f8ff 100%)",
-              boxShadow: "0 18px 40px -12px rgba(10,22,40,0.55), inset 0 0 0 1px rgba(27,58,107,0.08)",
-            }} />
-            {/* Gold hairline */}
-            <div style={{
-              position: "absolute", inset: 10, borderRadius: "50%",
-              border: "1px solid rgba(201,148,58,0.45)",
-            }} />
-            {/* Logo */}
-            <img
-              src={logoHero}
-              alt="انطلاقة"
+          {/* Logo column — big & organized, sits on the left of the hero */}
+          <div style={{ flex: "1 1 38%", minWidth: 320, display: "flex", justifyContent: "center", order: 2 }}>
+            <div
+              className="logo-float"
               style={{
                 position: "relative",
-                width: "62%",
-                height: "auto",
-                objectFit: "contain",
-                filter: "drop-shadow(0 6px 14px rgba(27,58,107,0.25))",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "min(440px, 90%)",
+                aspectRatio: "1 / 1",
               }}
-            />
+            >
+              {/* Outer glow ring */}
+              <div style={{
+                position: "absolute", inset: -20, borderRadius: "50%",
+                background: "radial-gradient(circle at center, rgba(0,180,216,0.30) 0%, rgba(43,95,199,0.14) 45%, rgba(255,255,255,0) 72%)",
+                filter: "blur(4px)",
+              }} />
+              {/* Dashed outer ring */}
+              <div style={{
+                position: "absolute", inset: 0, borderRadius: "50%",
+                border: "1px dashed rgba(255,255,255,0.18)",
+              }} />
+              {/* Gold hairline */}
+              <div style={{
+                position: "absolute", inset: 18, borderRadius: "50%",
+                border: "1px solid rgba(201,148,58,0.55)",
+              }} />
+              {/* White card disc */}
+              <div style={{
+                position: "absolute", inset: 30, borderRadius: "50%",
+                background: "linear-gradient(160deg, #ffffff 0%, #f4f8ff 100%)",
+                boxShadow: "0 30px 70px -20px rgba(10,22,40,0.6), inset 0 0 0 1px rgba(27,58,107,0.08)",
+              }} />
+              {/* Top gold accent dot */}
+              <div style={{
+                position: "absolute", top: 6, left: "50%", transform: "translateX(-50%)",
+                width: 10, height: 10, borderRadius: "50%", background: "#C9943A",
+                boxShadow: "0 0 16px rgba(201,148,58,0.9)",
+              }} />
+              {/* Bottom teal accent dot */}
+              <div style={{
+                position: "absolute", bottom: 6, left: "50%", transform: "translateX(-50%)",
+                width: 8, height: 8, borderRadius: "50%", background: "#00B4D8",
+                boxShadow: "0 0 14px rgba(0,180,216,0.9)",
+              }} />
+              {/* Logo */}
+              <img
+                src={logoHero}
+                alt="انطلاقة"
+                style={{
+                  position: "relative",
+                  width: "60%",
+                  height: "auto",
+                  objectFit: "contain",
+                  filter: "drop-shadow(0 10px 24px rgba(27,58,107,0.30))",
+                }}
+              />
+            </div>
           </div>
+
 
         </div>
 
