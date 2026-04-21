@@ -235,7 +235,16 @@ const Index = () => {
     .animate { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .animate.visible { opacity: 1; transform: translateY(0); }
     .logo-float { animation: logoFloat 6s ease-in-out infinite; }
-    @keyframes logoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes logoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    .spin-slow { animation: spinSlow 28s linear infinite; }
+    @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .spin-rev { animation: spinSlow 40s linear infinite reverse; }
+    .glow-pulse { animation: glowPulse 4.5s ease-in-out infinite; }
+    @keyframes glowPulse { 0%,100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+    .logo-breathe { animation: logoBreathe 5s ease-in-out infinite; transform-origin: center; }
+    @keyframes logoBreathe { 0%,100% { transform: scale(1); filter: drop-shadow(0 10px 24px rgba(27,58,107,0.30)); } 50% { transform: scale(1.04); filter: drop-shadow(0 16px 36px rgba(0,180,216,0.45)); } }
+    .orbit-dot { animation: orbit 12s linear infinite; transform-origin: center; }
+    @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .dot-pattern { background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; }
     .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
@@ -376,7 +385,7 @@ const Index = () => {
           </div>
 
           {/* Logo column — big & organized, sits on the left of the hero */}
-          <div style={{ flex: "1 1 38%", minWidth: 320, display: "flex", justifyContent: "center", order: 2 }}>
+          <div style={{ flex: "1 1 42%", minWidth: 320, display: "flex", justifyContent: "center", order: 2 }}>
             <div
               className="logo-float"
               style={{
@@ -384,58 +393,60 @@ const Index = () => {
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: "min(440px, 90%)",
+                width: "min(560px, 100%)",
                 aspectRatio: "1 / 1",
               }}
             >
-              {/* Outer glow ring */}
-              <div style={{
-                position: "absolute", inset: -20, borderRadius: "50%",
-                background: "radial-gradient(circle at center, rgba(0,180,216,0.30) 0%, rgba(43,95,199,0.14) 45%, rgba(255,255,255,0) 72%)",
-                filter: "blur(4px)",
+              {/* Pulsing outer glow */}
+              <div className="glow-pulse" style={{
+                position: "absolute", inset: -40, borderRadius: "50%",
+                background: "radial-gradient(circle at center, rgba(0,180,216,0.40) 0%, rgba(43,95,199,0.18) 45%, rgba(255,255,255,0) 72%)",
+                filter: "blur(6px)",
               }} />
-              {/* Dashed outer ring */}
-              <div style={{
+              {/* Rotating dashed outer ring */}
+              <div className="spin-slow" style={{
                 position: "absolute", inset: 0, borderRadius: "50%",
-                border: "1px dashed rgba(255,255,255,0.18)",
+                border: "1px dashed rgba(255,255,255,0.22)",
               }} />
-              {/* Gold hairline */}
-              <div style={{
-                position: "absolute", inset: 18, borderRadius: "50%",
+              {/* Reverse rotating gold hairline */}
+              <div className="spin-rev" style={{
+                position: "absolute", inset: 16, borderRadius: "50%",
                 border: "1px solid rgba(201,148,58,0.55)",
               }} />
               {/* White card disc */}
               <div style={{
-                position: "absolute", inset: 30, borderRadius: "50%",
+                position: "absolute", inset: 28, borderRadius: "50%",
                 background: "linear-gradient(160deg, #ffffff 0%, #f4f8ff 100%)",
-                boxShadow: "0 30px 70px -20px rgba(10,22,40,0.6), inset 0 0 0 1px rgba(27,58,107,0.08)",
+                boxShadow: "0 35px 80px -20px rgba(10,22,40,0.65), inset 0 0 0 1px rgba(27,58,107,0.08)",
               }} />
-              {/* Top gold accent dot */}
-              <div style={{
-                position: "absolute", top: 6, left: "50%", transform: "translateX(-50%)",
-                width: 10, height: 10, borderRadius: "50%", background: "#C9943A",
-                boxShadow: "0 0 16px rgba(201,148,58,0.9)",
-              }} />
-              {/* Bottom teal accent dot */}
-              <div style={{
-                position: "absolute", bottom: 6, left: "50%", transform: "translateX(-50%)",
-                width: 8, height: 8, borderRadius: "50%", background: "#00B4D8",
-                boxShadow: "0 0 14px rgba(0,180,216,0.9)",
-              }} />
-              {/* Logo */}
+              {/* Orbiting accent dots (rotate together, positioned at top/bottom) */}
+              <div className="orbit-dot" style={{ position: "absolute", inset: 0 }}>
+                <div style={{
+                  position: "absolute", top: -2, left: "50%", transform: "translateX(-50%)",
+                  width: 12, height: 12, borderRadius: "50%", background: "#C9943A",
+                  boxShadow: "0 0 18px rgba(201,148,58,1)",
+                }} />
+                <div style={{
+                  position: "absolute", bottom: -2, left: "50%", transform: "translateX(-50%)",
+                  width: 10, height: 10, borderRadius: "50%", background: "#00B4D8",
+                  boxShadow: "0 0 16px rgba(0,180,216,1)",
+                }} />
+              </div>
+              {/* Logo — fills the disc */}
               <img
                 src={logoHero}
                 alt="انطلاقة"
+                className="logo-breathe"
                 style={{
                   position: "relative",
-                  width: "88%",
+                  width: "82%",
                   height: "auto",
                   objectFit: "contain",
-                  filter: "drop-shadow(0 10px 24px rgba(27,58,107,0.30))",
                 }}
               />
             </div>
           </div>
+
 
 
         </div>
