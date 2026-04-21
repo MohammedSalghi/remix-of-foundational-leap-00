@@ -375,78 +375,52 @@ const Index = () => {
             </div>
           </div>
 
-          <div style={{ flex: "1 1 42%", minWidth: 320, textAlign: "center" }}>
-            <div
-              className="logo-float"
+          {/* Logo posted in top-left of hero */}
+          <div
+            className="logo-float"
+            style={{
+              position: "absolute",
+              top: 96,
+              left: 32,
+              zIndex: 2,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 180,
+              height: 180,
+            }}
+          >
+            {/* Outer glow ring */}
+            <div style={{
+              position: "absolute", inset: 0, borderRadius: "50%",
+              background: "radial-gradient(circle at center, rgba(0,180,216,0.25) 0%, rgba(43,95,199,0.12) 45%, rgba(255,255,255,0) 72%)",
+              filter: "blur(2px)",
+            }} />
+            {/* White card disc */}
+            <div style={{
+              position: "absolute", inset: 14, borderRadius: "50%",
+              background: "linear-gradient(160deg, #ffffff 0%, #f4f8ff 100%)",
+              boxShadow: "0 18px 40px -12px rgba(10,22,40,0.55), inset 0 0 0 1px rgba(27,58,107,0.08)",
+            }} />
+            {/* Gold hairline */}
+            <div style={{
+              position: "absolute", inset: 10, borderRadius: "50%",
+              border: "1px solid rgba(201,148,58,0.45)",
+            }} />
+            {/* Logo */}
+            <img
+              src={logoHero}
+              alt="انطلاقة"
               style={{
                 position: "relative",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 460,
-                height: 460,
-                maxWidth: "100%",
+                width: "62%",
+                height: "auto",
+                objectFit: "contain",
+                filter: "drop-shadow(0 6px 14px rgba(27,58,107,0.25))",
               }}
-            >
-              {/* Outer glow ring */}
-              <div style={{
-                position: "absolute", inset: 0, borderRadius: "50%",
-                background: "radial-gradient(circle at center, rgba(0,180,216,0.25) 0%, rgba(43,95,199,0.12) 45%, rgba(255,255,255,0) 72%)",
-                filter: "blur(2px)",
-              }} />
-              {/* White card disc */}
-              <div style={{
-                position: "absolute", inset: 40, borderRadius: "50%",
-                background: "linear-gradient(160deg, #ffffff 0%, #f4f8ff 100%)",
-                boxShadow: "0 30px 80px -20px rgba(10,22,40,0.55), inset 0 0 0 1px rgba(27,58,107,0.08)",
-              }} />
-              {/* Gold hairline */}
-              <div style={{
-                position: "absolute", inset: 30, borderRadius: "50%",
-                border: "1px solid rgba(201,148,58,0.45)",
-              }} />
-              {/* Dashed inner ring */}
-              <div style={{
-                position: "absolute", inset: 56, borderRadius: "50%",
-                border: "1px dashed rgba(27,58,107,0.18)",
-              }} />
-              {/* Logo */}
-              <img
-                src={logoHero}
-                alt="1000 رائد"
-                style={{
-                  position: "relative",
-                  width: "62%",
-                  height: "auto",
-                  objectFit: "contain",
-                  filter: "drop-shadow(0 8px 20px rgba(27,58,107,0.25))",
-                }}
-              />
-              {/* Corner accents */}
-              <div style={{
-                position: "absolute", top: 18, left: "50%", transform: "translateX(-50%)",
-                width: 8, height: 8, borderRadius: "50%", background: "#C9943A",
-                boxShadow: "0 0 12px rgba(201,148,58,0.8)",
-              }} />
-              <div style={{
-                position: "absolute", bottom: 18, left: "50%", transform: "translateX(-50%)",
-                width: 6, height: 6, borderRadius: "50%", background: "#00B4D8",
-                boxShadow: "0 0 10px rgba(0,180,216,0.8)",
-              }} />
-            </div>
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: 10, marginTop: 24,
-              padding: "6px 16px", borderRadius: 999,
-              background: "rgba(201,148,58,0.12)", border: "1px solid rgba(201,148,58,0.35)",
-            }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#C9943A" }} />
-              <span style={{ fontFamily: "'Cairo',sans-serif", fontWeight: 600, fontSize: 12, color: "#C9943A", letterSpacing: "0.08em" }}>
-                مبادرة 1000 رائد
-              </span>
-            </div>
-            <div style={{ fontFamily: "'Noto Kufi Arabic',sans-serif", fontWeight: 800, fontSize: 32, color: "#fff", marginTop: 14 }}>انطلاقة</div>
-            <div style={{ fontFamily: "'Cairo',sans-serif", fontSize: 14, color: "rgba(255,255,255,0.65)" }}>صندوق دعم وضمان تمويل الشركات الناشئة</div>
+            />
           </div>
+
         </div>
 
         {/* Stats bar */}
