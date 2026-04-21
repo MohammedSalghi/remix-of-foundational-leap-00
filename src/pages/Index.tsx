@@ -235,7 +235,16 @@ const Index = () => {
     .animate { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .animate.visible { opacity: 1; transform: translateY(0); }
     .logo-float { animation: logoFloat 6s ease-in-out infinite; }
-    @keyframes logoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes logoFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    .spin-slow { animation: spinSlow 28s linear infinite; }
+    @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .spin-rev { animation: spinSlow 40s linear infinite reverse; }
+    .glow-pulse { animation: glowPulse 4.5s ease-in-out infinite; }
+    @keyframes glowPulse { 0%,100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
+    .logo-breathe { animation: logoBreathe 5s ease-in-out infinite; transform-origin: center; }
+    @keyframes logoBreathe { 0%,100% { transform: scale(1); filter: drop-shadow(0 10px 24px rgba(27,58,107,0.30)); } 50% { transform: scale(1.04); filter: drop-shadow(0 16px 36px rgba(0,180,216,0.45)); } }
+    .orbit-dot { animation: orbit 12s linear infinite; transform-origin: center; }
+    @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .dot-pattern { background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; }
     .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
