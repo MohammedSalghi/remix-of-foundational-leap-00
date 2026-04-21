@@ -428,7 +428,7 @@ const Index = () => {
                 alt="انطلاقة"
                 style={{
                   position: "relative",
-                  width: "60%",
+                  width: "88%",
                   height: "auto",
                   objectFit: "contain",
                   filter: "drop-shadow(0 10px 24px rgba(27,58,107,0.30))",
