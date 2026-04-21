@@ -316,8 +316,8 @@ const Index = () => {
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 60% 40%, rgba(43,95,199,0.4) 0%, transparent 65%), radial-gradient(ellipse at 20% 80%, rgba(0,180,216,0.2) 0%, transparent 55%)" }} />
         <div className="dot-pattern" style={{ position: "absolute", inset: 0 }} />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "80px 24px 0", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 48 }}>
-          <div style={{ flex: "1 1 55%", minWidth: 300 }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "80px 24px 0", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 40 }}>
+          <div style={{ flex: "1 1 100%", minWidth: 300 }}>
             <div className="animate" style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", color: "#00B4D8", marginBottom: 16, fontFamily: "'Cairo',sans-serif" }}>
               01 · المنصة الوطنية للشركات الناشئة
             </div>
