@@ -289,9 +289,9 @@ const Index = () => {
           height: 72, maxWidth: 1280, margin: "0 auto", padding: "0 32px",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <SmallLogo size={40} />
+            <SmallLogo size={72} />
             <div>
-              <div style={{ fontFamily: "'Noto Kufi Arabic',sans-serif", fontWeight: 700, fontSize: 18, color: "#1B3A6B" }}>انطلاقة</div>
+              <div style={{ fontFamily: "'Noto Kufi Arabic',sans-serif", fontWeight: 700, fontSize: 24, color: "#1B3A6B" }}>انطلاقة</div>
               <div style={{ fontSize: 11, color: "#64748B" }}>صندوق دعم الشركات الناشئة</div>
             </div>
           </div>
