@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import logoImg from "@/assets/logo.png";
 import logoHero from "@/assets/logo-hero.png";
+import ebtekarLogo from "@/assets/ebtekar-logo.png";
 import {
   CircleDollarSign, EyeOff, Network, Scale, Landmark, Cpu, Link, RocketIcon,
   FileText, Bot, CheckCircle2, Building2, Banknote,
