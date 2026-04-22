@@ -395,8 +395,8 @@ const Index = () => {
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              width: 200,
-              height: 200,
+              width: 320,
+              height: 320,
             }}
           >
             {/* Pulsing outer glow */}
