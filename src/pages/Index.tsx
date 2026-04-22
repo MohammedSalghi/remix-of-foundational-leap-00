@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import logoImg from "@/assets/logo.png";
 import logoHero from "@/assets/logo-hero.png";
 import ebtekarLogo from "@/assets/ebtekar-logo.png";
+import partnerGnu from "@/assets/partner-gnu.png";
+import partnerCivilRegistry from "@/assets/partner-civil-registry.png";
+import partnerEconomy from "@/assets/partner-economy.png";
+import partnerLypay from "@/assets/partner-lypay.png";
+import partnerCbl from "@/assets/partner-cbl.png";
 import {
   CircleDollarSign, EyeOff, Network, Scale, Landmark, Cpu, Link, RocketIcon,
   FileText, Bot, CheckCircle2, Building2, Banknote,
@@ -1023,6 +1028,45 @@ const Index = () => {
           <p style={{ fontFamily: "'Cairo',sans-serif", fontSize: 12, color: "rgba(255,255,255,0.40)", textAlign: "center", maxWidth: 600, lineHeight: 1.8 }}>
             هذه المنصة ملك للدولة الليبية وتُدار بموجب القرار رقم 23 لسنة 2025 الصادر عن رئيس مجلس الوزراء — حكومة الوحدة الوطنية
           </p>
+        </div>
+
+        {/* Partners */}
+        <div style={{
+          maxWidth: 1280, margin: "0 auto", padding: "32px 0 24px",
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+        }}>
+          <h4 style={{
+            fontFamily: "'Cairo',sans-serif", fontSize: 13, fontWeight: 600,
+            color: "rgba(255,255,255,0.55)", textAlign: "center", letterSpacing: "0.08em",
+            marginBottom: 24, textTransform: "uppercase",
+          }}>
+            شركاؤنا
+          </h4>
+          <div style={{
+            display: "flex", flexWrap: "wrap", justifyContent: "center", alignItems: "center",
+            gap: 48, padding: "0 20px",
+          }}>
+            {[
+              { src: partnerGnu, alt: "حكومة الوحدة الوطنية" },
+              { src: partnerEconomy, alt: "وزارة الاقتصاد والتجارة" },
+              { src: partnerCbl, alt: "مصرف ليبيا المركزي" },
+              { src: partnerCivilRegistry, alt: "مصلحة الأحوال المدنية" },
+              { src: partnerLypay, alt: "LyPay" },
+            ].map((p) => (
+              <img
+                key={p.alt}
+                src={p.src}
+                alt={p.alt}
+                style={{
+                  height: 72, width: "auto", objectFit: "contain",
+                  filter: "brightness(0) invert(1)", opacity: 0.85,
+                  transition: "opacity 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom bar */}
