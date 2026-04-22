@@ -513,6 +513,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ═══ PARTNERS STRIP (AFTER HERO) ═══ */}
+      <section style={{ background: "#fff", padding: "48px 32px", borderBottom: "1px solid hsl(214,32%,91%)" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <h3 style={{
+            fontFamily: "'Cairo',sans-serif", fontSize: 13, fontWeight: 700,
+            color: "#64748B", textAlign: "center", letterSpacing: "0.12em",
+            marginBottom: 32, textTransform: "uppercase",
+          }}>
+            بالشراكة مع
+          </h3>
+          <div style={{
+            display: "flex", flexWrap: "wrap", alignItems: "center",
+            justifyContent: "center", gap: 64,
+          }}>
+            {[
+              { src: partnerGnu, alt: "حكومة الوحدة الوطنية" },
+              { src: partnerEconomy, alt: "وزارة الاقتصاد والتجارة" },
+              { src: partnerCbl, alt: "مصرف ليبيا المركزي" },
+              { src: partnerCivilRegistry, alt: "مصلحة الأحوال المدنية" },
+              { src: partnerLypay, alt: "LyPay" },
+            ].map((p) => (
+              <img
+                key={p.alt}
+                src={p.src}
+                alt={p.alt}
+                style={{
+                  height: 80, width: "auto", objectFit: "contain",
+                  opacity: 0.9, transition: "opacity 0.2s, transform 0.2s",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "scale(1.05)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = "0.9"; e.currentTarget.style.transform = "scale(1)"; }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══ SECTION 02: THE PROBLEM ═══ */}
       <Section id="problem" bg="#F7F8FC" watermark>
         <SectionLabel num="02">التحدي</SectionLabel>
