@@ -1015,9 +1015,9 @@ const Index = () => {
           padding: "32px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: 16,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.15)" }} />
-            <SmallLogo size={32} />
-            <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.15)" }} />
+            <div style={{ width: 60, height: 1, background: "rgba(255,255,255,0.15)" }} />
+            <SmallLogo size={72} />
+            <div style={{ width: 60, height: 1, background: "rgba(255,255,255,0.15)" }} />
           </div>
           <p style={{ fontFamily: "'Cairo',sans-serif", fontSize: 12, color: "rgba(255,255,255,0.40)", textAlign: "center", maxWidth: 600, lineHeight: 1.8 }}>
             هذه المنصة ملك للدولة الليبية وتُدار بموجب القرار رقم 23 لسنة 2025 الصادر عن رئيس مجلس الوزراء — حكومة الوحدة الوطنية
