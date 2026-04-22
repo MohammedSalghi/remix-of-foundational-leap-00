@@ -1037,6 +1037,24 @@ const Index = () => {
             تخضع جميع قرارات التمويل لمعايير القرار رقم 81 لسنة 2025
           </span>
         </div>
+        {/* Powered by */}
+        <div style={{
+          maxWidth: 1280, margin: "0 auto", padding: "20px 0 8px",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 10,
+          borderTop: "1px solid rgba(255,255,255,0.06)",
+        }}>
+          <img
+            src={ebtekarLogo}
+            alt="Ebtekar Raqmi Co."
+            style={{ height: 56, width: "auto", objectFit: "contain", opacity: 0.95 }}
+          />
+          <span style={{
+            fontFamily: "'Cairo',sans-serif", fontSize: 12, fontWeight: 500,
+            color: "rgba(255,255,255,0.55)", letterSpacing: "0.04em",
+          }}>
+            Powered by Ebtekar Raqmi Co.
+          </span>
+        </div>
       </footer>
     </>
   );
